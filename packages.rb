@@ -110,7 +110,6 @@ dep 'sshd.managed' do
   }
 end
 dep 'tree.managed'
-dep 'vim.managed'
 dep 'wget.managed'
 dep 'yaml headers.managed' do
   installs {

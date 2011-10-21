@@ -88,6 +88,7 @@ dep('ssl-cert.managed') do
   installs {
     via :yum, 'openssl'
   }
+  provides 'openssl'
 end
 
 dep('chef install dependencies.managed') {

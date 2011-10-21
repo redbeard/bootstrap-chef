@@ -93,7 +93,7 @@ end
 
 dep('chef install dependencies.managed') {
   requires 'build-essential.managed', 'wget.managed', 'ssl-cert.managed'
-  installs ''
+  installs 'wget'
   provides %w[wget make gcc]
 }
 

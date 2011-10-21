@@ -91,7 +91,7 @@ dep('ssl-cert.managed') do
 end
 
 dep('chef install dependencies.managed') {
-  requires 'build-essential.managed', 'wget.managed', requires 'ssl-cert.managed'
+  requires 'build-essential.managed', 'wget.managed', 'ssl-cert.managed'
   installs ''
   provides %w[wget make gcc]
 }

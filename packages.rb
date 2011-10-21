@@ -111,7 +111,6 @@ dep 'sshd.managed' do
   }
 end
 dep 'tree.managed'
-dep 'wget.managed'
 dep 'yaml headers.managed' do
   installs {
     via :brew, 'libyaml'

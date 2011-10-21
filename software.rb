@@ -18,6 +18,7 @@ dep('vim.managed') {
   }
   provides 'vim'
 }
+
 dep 'nmap.managed'
 dep 'screen.managed'
 dep 'jnettop.managed' do
@@ -25,7 +26,6 @@ dep 'jnettop.managed' do
 end
 dep 'htop.managed'
 dep 'tree.managed'
-dep 'wget.managed'
 dep 'zlib headers.managed' do
   installs { via :apt, 'zlib1g-dev' }
   provides []

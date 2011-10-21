@@ -77,9 +77,17 @@ dep('rubygems with no docs') {
   }
 }
 
+dep 'build-essential.managed' do
+  installs {
+    via :yum, 'gcc gcc-c++ kernel-devel'
+  }
+  provides 'gcc'
+end
+
 dep('chef install dependencies.managed') {
-  installs %w[build-essential wget ssl-cert]
-  provides %w[wget make gcc]
+  requires 'build-essential.managed', 'wget.managed'
+  installs %w[ssl-cert]
+  provides %w[wget make]
 }
 
 dep('gems.chef', :chef_version) {

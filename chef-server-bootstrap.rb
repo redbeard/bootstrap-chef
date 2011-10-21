@@ -84,6 +84,13 @@ dep 'build-essential.managed' do
   provides 'gcc'
 end
 
+dep 'ruby-devel.managed' do
+  installs {
+    via :yum, %w[ruby-devel]
+  }  
+  provides 'ruby'
+end
+
 dep('ssl-cert.managed') do
   installs {
     via :yum, 'openssl'
@@ -92,7 +99,7 @@ dep('ssl-cert.managed') do
 end
 
 dep('chef install dependencies.managed') {
-  requires 'build-essential.managed', 'wget.managed', 'ssl-cert.managed'
+  requires 'build-essential.managed', 'wget.managed', 'ssl-cert.managed', 'ruby-devel.managed'
   installs 'wget'
   provides %w[wget make gcc]
 }

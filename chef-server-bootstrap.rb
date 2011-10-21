@@ -79,7 +79,7 @@ dep('rubygems with no docs') {
 
 dep 'build-essential.managed' do
   installs {
-    via :yum, 'gcc gcc-c++ kernel-devel'
+    via :yum, %w[gcc gcc-c++ kernel-devel]
   }
   provides 'gcc'
 end

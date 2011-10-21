@@ -84,10 +84,16 @@ dep 'build-essential.managed' do
   provides 'gcc'
 end
 
+dep('ssl-cert.managed') do
+  installs {
+    via :yum, 'openssl'
+  }
+end
+
 dep('chef install dependencies.managed') {
-  requires 'build-essential.managed', 'wget.managed'
-  installs %w[ssl-cert]
-  provides %w[wget make]
+  requires 'build-essential.managed', 'wget.managed', requires 'ssl-cert.managed'
+  installs ''
+  provides %w[wget make gcc]
 }
 
 dep('gems.chef', :chef_version) {
